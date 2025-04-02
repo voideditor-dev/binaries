@@ -12,8 +12,7 @@ jobs:
       - name: Clone private repo
         run: |
           git clone https://x-access-token:${{ secrets.PRIVATE_TOKEN }}@github.com/voideditor-dev/ide.git
-          cd ide
-          ls -la
+          chmod -R 777 ide
 
       - name: Setup Node
         uses: actions/setup-node@v4
