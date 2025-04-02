@@ -77,7 +77,7 @@ jobs:
           VSCODE_ARCH: ${{ matrix.arch }}
         run: |
           export AGENT_TEMPDIRECTORY="${KEYCHAIN_DIR}"
-          cd $(pwd)/build/darwin
+          cd $(pwd)/ide/build/darwin
           node sign.js "${SIGN_DIR}"
           codesign --verify --deep --strict --verbose=4 "${SIGNED_DOTAPP}"
           spctl --assess --type execute --verbose=4 "${SIGNED_DOTAPP}" || echo "✅ 尚未公证，跳过 spctl 错误"
