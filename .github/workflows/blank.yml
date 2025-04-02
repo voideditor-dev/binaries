@@ -28,7 +28,7 @@ jobs:
           npm config set fetch-timeout 300000
           npm config set fetch-retry-mintimeout 20000
           npm config set fetch-retry-maxtimeout 120000
-          npm install
+          cd ide && npm install
           npm install -g node-gyp
           npm install -g gulp-cli
 
