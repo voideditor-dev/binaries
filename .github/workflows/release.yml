@@ -4,6 +4,8 @@ on:
   push:
     tags:
       - 'v*'
+  repository_dispatch:
+    types: [trigger-release]
   workflow_dispatch:
 
 jobs:
@@ -148,7 +150,6 @@ jobs:
             ${{ env.SIGNED_DOTAPP_DIR }}/Pubinfo-Installer-darwin-${{ matrix.arch }}.dmg.sha256
             ${{ env.SIGNED_DOTAPP_DIR }}/Pubinfo-UpdJSON-darwin-${{ matrix.arch }}.json
 
-  
   build-windows-x86:
     needs: build-macos
     runs-on: windows-latest
